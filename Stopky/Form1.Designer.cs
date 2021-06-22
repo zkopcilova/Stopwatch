@@ -30,6 +30,7 @@ namespace Stopky
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timeDisplay = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.stopButton = new System.Windows.Forms.Button();
@@ -40,7 +41,9 @@ namespace Stopky
             this.timeName = new System.Windows.Forms.TextBox();
             this.dataView = new System.Windows.Forms.DataGridView();
             this.deleteSaved = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timeDisplay
@@ -96,12 +99,12 @@ namespace Stopky
             // 
             this.saveButton.BackColor = System.Drawing.Color.LightGray;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
+            this.saveButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.Location = new System.Drawing.Point(386, 190);
-            this.saveButton.MaximumSize = new System.Drawing.Size(264, 32);
-            this.saveButton.MinimumSize = new System.Drawing.Size(264, 32);
+            this.saveButton.MaximumSize = new System.Drawing.Size(264, 30);
+            this.saveButton.MinimumSize = new System.Drawing.Size(264, 30);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(264, 32);
+            this.saveButton.Size = new System.Drawing.Size(264, 30);
             this.saveButton.TabIndex = 9;
             this.saveButton.Text = "Save time";
             this.saveButton.UseVisualStyleBackColor = false;
@@ -128,19 +131,20 @@ namespace Stopky
             // timeName
             // 
             this.timeName.BackColor = System.Drawing.SystemColors.Window;
-            this.timeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timeName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.timeName.Location = new System.Drawing.Point(116, 190);
+            this.timeName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.timeName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.timeName.Font = new System.Drawing.Font("Arial", 11F);
+            this.timeName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.timeName.Location = new System.Drawing.Point(14, 3);
             this.timeName.Margin = new System.Windows.Forms.Padding(0);
-            this.timeName.MaximumSize = new System.Drawing.Size(264, 30);
             this.timeName.MaxLength = 50;
-            this.timeName.MinimumSize = new System.Drawing.Size(264, 30);
             this.timeName.Name = "timeName";
-            this.timeName.Size = new System.Drawing.Size(264, 30);
+            this.timeName.Size = new System.Drawing.Size(238, 22);
             this.timeName.TabIndex = 10;
+            this.timeName.Text = "Name";
             this.timeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.timeName.WordWrap = false;
+            this.timeName.Click += new System.EventHandler(this.timeName_Click);
             // 
             // dataView
             // 
@@ -166,25 +170,38 @@ namespace Stopky
             this.deleteSaved.UseVisualStyleBackColor = false;
             this.deleteSaved.Click += new System.EventHandler(this.deleteSaved_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.timeName);
+            this.panel1.Location = new System.Drawing.Point(116, 190);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(264, 30);
+            this.panel1.TabIndex = 13;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(800, 504);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.deleteSaved);
             this.Controls.Add(this.dataView);
-            this.Controls.Add(this.timeName);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.pauseButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.timeDisplay);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Stopky";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +219,7 @@ namespace Stopky
         private System.Windows.Forms.TextBox timeName;
         private System.Windows.Forms.DataGridView dataView;
         private System.Windows.Forms.Button deleteSaved;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

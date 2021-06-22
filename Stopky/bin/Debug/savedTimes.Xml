@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ArrayOfSavedTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <savedTime>
+    <Name>time1</Name>
+    <Time>00:01.49</Time>
+  </savedTime>
+</ArrayOfSavedTime>
